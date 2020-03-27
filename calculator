@@ -1,0 +1,41 @@
+from tkinter import *
+from tkinter import ttk
+
+def calculate(*args):
+	try:
+		value = float(ml.get())
+		kg.set(round(0.001333333 * value, 2))
+	except ValueError:
+		pass
+
+root = Tk()
+root.title("VG Fill Weights")
+
+mainframe = ttk.Frame(root, padding="3 3 12 12")
+mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
+root.columnconfigure(0, weight=1)
+root.rowconfigure(0, weight=1)
+
+ml = StringVar()
+off = StringVar()
+kg = StringVar()
+
+ml_entry = ttk.Entry(mainframe, width=7, textvariable=ml)
+ml_entry.grid(column=3, row=1, sticky=E)
+
+off_entry = ttk.Entry(mainframe, width=5, textvariable=off)
+off_entry.grid(column=1, row=1, sticky=W)
+
+ttk.Label(mainframe, textvariable=kg, font='Helvetica 9 bold').grid(column=3, row=2, sticky=E)
+
+ttk.Button(mainframe, text="Calculate", command=calculate).grid(column=3, row=3, sticky=W)
+
+ttk.Label(mainframe, text="Milliliters").grid(column=4, row=1, sticky=W)
+ttk.Label(mainframe, text="Off-Number").grid(column=0, row=1, sticky=W)
+ttk.Label(mainframe, text="converted to kilograms is").grid(column=2, row=2, sticky=EW)
+ttk.Label(mainframe, text="Kilograms").grid(column=4, row=2, sticky=W)
+
+ml_entry.focus()
+root.bind('<Return>', calculate)
+
+root.mainloop()
