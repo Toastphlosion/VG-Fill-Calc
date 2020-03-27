@@ -25,6 +25,8 @@ ml_entry.grid(column=3, row=1, sticky=E)
 
 off_entry = ttk.Entry(mainframe, width=5, textvariable=off)
 off_entry.grid(column=1, row=1, sticky=W)
+off.set("0")
+
 
 ttk.Label(mainframe, textvariable=kg, font='Helvetica 9 bold').grid(column=3, row=2, sticky=E)
 
