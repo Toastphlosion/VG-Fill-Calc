@@ -3,7 +3,7 @@ from tkinter import ttk
 
 def calculate(*args):
 	try:
-		value = float(ml.get())
+		value = float(ml.get()) + (float(off.get()) * 1000)
 		kg.set(round(0.001333333 * value, 2))
 	except ValueError:
 		pass
