@@ -1,5 +1,5 @@
 # VG-Fill-Calc
 Calculates kg needed for glycerin, converted from ml.
 
-Needs work on accepting 1L off-numbers. Specifically, the equation in the command calculate.
+Now accepts off-numbers. Will not calculate if the Off-Number field is empty. Need to fix that, right now just defaults to 0.
 Needs some TLC aesthetically
